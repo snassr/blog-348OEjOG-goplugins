@@ -1,0 +1,27 @@
+edition = "2023";
+
+package admin.v1;
+
+option go_package = "github.com/snassr/blog-348OEjOG-goplugins/api/proto/gen/admin/v1;adminv1";
+
+service AdminService {
+  rpc RegisterPlugin(RegisterPluginRequest) returns (RegisterPluginResponse);
+  rpc AllGreetings(AllGreetingsRequest) returns (AllGreetingsResponse);
+}
+
+message RegisterPluginRequest {
+  string id = 1;
+  string address = 2;
+}
+
+message RegisterPluginResponse {
+  string status = 1;
+}
+
+message AllGreetingsRequest {
+  string name = 1;
+}
+
+message AllGreetingsResponse {
+  repeated string messages = 1;
+}
