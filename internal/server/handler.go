@@ -21,7 +21,19 @@ func NewAdminHandler(pm *pluginruntime.Manager) *AdminHandler {
 }
 
 func (h *AdminHandler) RegisterPlugin(ctx context.Context, req *connect.Request[adminv1.RegisterPluginRequest]) (*connect.Response[adminv1.RegisterPluginResponse], error) {
-	return nil, h.pm.RegisterRemote(*req.Msg.Id, *req.Msg.Address)
+	err := h.pm.RegisterRemote(*req.Msg.Id, *req.Msg.Address)
+	if err != nil {
+		return nil, err
+	}
+
+	status := "REGISTERED"
+
+	return &connect.Response[adminv1.RegisterPluginResponse]{
+		Msg: &adminv1.RegisterPluginResponse{
+			Status: &status,
+		},
+	}, nil
+
 }
 
 func (h *AdminHandler) AllGreetings(ctx context.Context, req *connect.Request[adminv1.AllGreetingsRequest]) (*connect.Response[adminv1.AllGreetingsResponse], error) {
