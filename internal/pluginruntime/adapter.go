@@ -5,8 +5,8 @@ import (
 
 	"connectrpc.com/connect"
 
-	pluginv1 "github.com/snassr/blog-348OEjOG-goplugins/external/plugin/v1/api/proto/gen/plugin/v1"
-	"github.com/snassr/blog-348OEjOG-goplugins/external/plugin/v1/api/proto/gen/plugin/v1/pluginv1connect"
+	pluginv1 "github.com/snassr/blog-348OEjOG-goplugins/external/plugin/v1/api/proto/gen/go/plugin/v1"
+	"github.com/snassr/blog-348OEjOG-goplugins/external/plugin/v1/api/proto/gen/go/plugin/v1/pluginv1connect"
 )
 
 type PluginAdapter struct {

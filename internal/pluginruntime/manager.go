@@ -5,7 +5,7 @@ import (
 	"net/http"
 	"sync"
 
-	"github.com/snassr/blog-348OEjOG-goplugins/external/plugin/v1/api/proto/gen/plugin/v1/pluginv1connect"
+	"github.com/snassr/blog-348OEjOG-goplugins/external/plugin/v1/api/proto/gen/go/plugin/v1/pluginv1connect"
 	"github.com/snassr/blog-348OEjOG-goplugins/external/plugin/v1/plugin"
 	"github.com/snassr/blog-348OEjOG-goplugins/internal/pluginruntime/plugins/plugin_en"
 )

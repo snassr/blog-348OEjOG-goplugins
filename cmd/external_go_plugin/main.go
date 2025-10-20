@@ -8,10 +8,10 @@ import (
 
 	"connectrpc.com/connect"
 
-	adminv1 "github.com/snassr/blog-348OEjOG-goplugins/api/proto/gen/admin/v1"
-	"github.com/snassr/blog-348OEjOG-goplugins/api/proto/gen/admin/v1/adminv1connect"
-	pluginv1 "github.com/snassr/blog-348OEjOG-goplugins/external/plugin/v1/api/proto/gen/plugin/v1"
-	"github.com/snassr/blog-348OEjOG-goplugins/external/plugin/v1/api/proto/gen/plugin/v1/pluginv1connect"
+	adminv1 "github.com/snassr/blog-348OEjOG-goplugins/api/proto/gen/go/admin/v1"
+	"github.com/snassr/blog-348OEjOG-goplugins/api/proto/gen/go/admin/v1/adminv1connect"
+	pluginv1 "github.com/snassr/blog-348OEjOG-goplugins/external/plugin/v1/api/proto/gen/go/plugin/v1"
+	"github.com/snassr/blog-348OEjOG-goplugins/external/plugin/v1/api/proto/gen/go/plugin/v1/pluginv1connect"
 )
 
 const (
