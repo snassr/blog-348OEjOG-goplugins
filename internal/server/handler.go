@@ -6,7 +6,7 @@ import (
 
 	"connectrpc.com/connect"
 
-	adminv1 "github.com/snassr/blog-348OEjOG-goplugins/api/proto/gen/go/admin/v1"
+	adminv1 "github.com/snassr/blog-348OEjOG-goplugins/external/gen/goplugins-api-proto-go/admin/v1"
 	"github.com/snassr/blog-348OEjOG-goplugins/internal/pluginruntime"
 )
 

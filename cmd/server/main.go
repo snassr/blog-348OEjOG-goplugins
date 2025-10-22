@@ -10,7 +10,7 @@ import (
 	"golang.org/x/net/http2"
 	"golang.org/x/net/http2/h2c"
 
-	"github.com/snassr/blog-348OEjOG-goplugins/api/proto/gen/go/admin/v1/adminv1connect"
+	"github.com/snassr/blog-348OEjOG-goplugins/external/gen/goplugins-api-proto-go/admin/v1/adminv1connect"
 	"github.com/snassr/blog-348OEjOG-goplugins/internal/pluginruntime"
 	"github.com/snassr/blog-348OEjOG-goplugins/internal/server"
 )

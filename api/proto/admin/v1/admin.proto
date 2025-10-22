@@ -2,7 +2,7 @@ edition = "2023";
 
 package admin.v1;
 
-option go_package = "github.com/snassr/blog-348OEjOG-goplugins/api/proto/gen/go/admin/v1;adminv1";
+option go_package = "github.com/snassr/blog-348OEjOG-goplugins/external/gen/goplugins-api-proto-go/admin/v1;adminv1";
 
 service AdminService {
   rpc RegisterPlugin(RegisterPluginRequest) returns (RegisterPluginResponse);
