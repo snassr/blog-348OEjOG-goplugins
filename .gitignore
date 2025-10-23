@@ -3,4 +3,8 @@
 
 # proto
 external/gen/*
+cmd/external_py_plugin/api/*
+
+# go
+__debug*
 
