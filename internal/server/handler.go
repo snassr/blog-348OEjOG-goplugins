@@ -3,6 +3,7 @@ package server
 import (
 	"context"
 	"fmt"
+	"log/slog"
 
 	"connectrpc.com/connect"
 
@@ -50,7 +51,8 @@ func (h *AdminHandler) AllGreetings(ctx context.Context, req *connect.Request[ad
 
 		g, err := p.Greet(ctx, name)
 		if err != nil {
-			return nil, err
+			slog.Error("failed with error", slog.String("err", err.Error()))
+			continue
 		}
 
 		greetings = append(greetings, g)
