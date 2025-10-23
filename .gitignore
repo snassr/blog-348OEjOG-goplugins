@@ -3,7 +3,8 @@
 
 # proto
 external/gen/*
-cmd/external_py_plugin/api/*
+cmd/external_py_plugin/admin/*
+cmd/external_py_plugin/plugin/*
 
 # go
 __debug*

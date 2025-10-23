@@ -7,3 +7,10 @@ plugins:
   - local: protoc-gen-connect-go
     out: ./../../../../gen/plugin-proto-go
     opt: paths=source_relative
+  # python
+  - remote: buf.build/protocolbuffers/python
+    out: ./../../../../../cmd/external_py_plugin
+  - remote: buf.build/protocolbuffers/pyi
+    out: ./../../../../../cmd/external_py_plugin
+  - remote: buf.build/connectrpc/python
+    out: ./../../../../../cmd/external_py_plugin

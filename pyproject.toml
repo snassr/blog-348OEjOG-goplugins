@@ -1,0 +1,18 @@
+[project]
+name = "blog-348OEjOG-goplugins"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+  "connectrpc",
+  "connect-python",
+  "httpx",
+  "fastapi",
+  "pydantic",
+  "uvicorn",
+]
+
+[tool.setuptools.packages.find]
+where = ["external/gen/plugin_proto_py", "external/gen/goplugins_api_proto_py"]
+include = ["*"]
