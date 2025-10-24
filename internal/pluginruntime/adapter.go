@@ -26,3 +26,27 @@ func (a *PluginAdapter) Greet(ctx context.Context, name string) (string, error) 
 
 	return *resp.Msg.Message, nil
 }
+
+func (a *PluginAdapter) StreamGreet(ctx context.Context, name string, send func(msg string) error) error {
+	req := connect.NewRequest(&pluginv1.StreamGreetRequest{
+		Name: &name,
+	})
+
+	stream, err := a.client.StreamGreet(ctx, req)
+	if err != nil {
+		return err
+	}
+
+	for stream.Receive() {
+		msg := stream.Msg().GetMessage()
+		if err := send(msg); err != nil {
+			return err
+		}
+	}
+
+	if err := stream.Err(); err != nil {
+		return err
+	}
+
+	return nil
+}

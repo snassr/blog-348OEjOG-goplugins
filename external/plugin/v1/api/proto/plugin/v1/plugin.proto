@@ -6,6 +6,7 @@ option go_package = "github.com/snassr/blog-348OEjOG-goplugins/external/gen/plug
 
 service PluginService {
   rpc Greet(GreetRequest) returns (GreetResponse);
+  rpc StreamGreet(StreamGreetRequest) returns (stream StreamGreetResponse);
 }
 
 message GreetRequest {
@@ -13,5 +14,13 @@ message GreetRequest {
 }
 
 message GreetResponse {
+  string message = 1;
+}
+
+message StreamGreetRequest {
+  string name = 1;
+}
+
+message StreamGreetResponse {
   string message = 1;
 }

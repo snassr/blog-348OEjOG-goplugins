@@ -64,3 +64,34 @@ func (h *AdminHandler) AllGreetings(ctx context.Context, req *connect.Request[ad
 		},
 	}, nil
 }
+
+func (h *AdminHandler) AllGreetingStreams(ctx context.Context, req *connect.Request[adminv1.AllGreetingStreamsRequest]) (*connect.Response[adminv1.AllGreetingStreamsResponse], error) {
+	list := h.pm.List()
+	greetings := []string{}
+
+	sendFn := func(msg string) error {
+		greetings = append(greetings, msg)
+		return nil
+	}
+
+	for _, id := range list {
+		p, ok := h.pm.Get(id)
+		if !ok {
+			return nil, fmt.Errorf("not found")
+		}
+
+		name := *req.Msg.Name
+
+		err := p.StreamGreet(ctx, name, sendFn)
+		if err != nil {
+			slog.Error("failed with error", slog.String("err", err.Error()))
+			continue
+		}
+	}
+
+	return &connect.Response[adminv1.AllGreetingStreamsResponse]{
+		Msg: &adminv1.AllGreetingStreamsResponse{
+			Messages: greetings,
+		},
+	}, nil
+}

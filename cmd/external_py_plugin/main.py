@@ -20,6 +20,13 @@ class GreeterPlugin(plugin_connect.PluginService):
         message = f"مرحبا، {req.name}"
         logging.info("Responding to greet(%s): %s", req.name, message)
         return plugin_pb2.GreetResponse(message=message)
+    
+    async def stream_greet(self, request: plugin_pb2.StreamGreetRequest, ctx):
+        name = request.name
+        for i in range(5):
+            yield plugin_pb2.StreamGreetResponse(
+                message=f"مرحبا #{i+1} to {name} from external Python plugin"
+            )
 
 
 # --- Build the ASGI app directly from Connect ---

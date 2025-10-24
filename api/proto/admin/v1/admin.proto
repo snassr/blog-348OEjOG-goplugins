@@ -7,6 +7,7 @@ option go_package = "github.com/snassr/blog-348OEjOG-goplugins/external/gen/gopl
 service AdminService {
   rpc RegisterPlugin(RegisterPluginRequest) returns (RegisterPluginResponse);
   rpc AllGreetings(AllGreetingsRequest) returns (AllGreetingsResponse);
+  rpc AllGreetingStreams(AllGreetingStreamsRequest) returns (AllGreetingStreamsResponse);
 }
 
 message RegisterPluginRequest {
@@ -23,5 +24,13 @@ message AllGreetingsRequest {
 }
 
 message AllGreetingsResponse {
+  repeated string messages = 1;
+}
+
+message AllGreetingStreamsRequest {
+  string name = 1;
+}
+
+message AllGreetingStreamsResponse {
   repeated string messages = 1;
 }

@@ -19,3 +19,9 @@ call-local-allgreetings:
 		-protoset <(buf build -o -) -plaintext \
 		-d '{"name": "Moe"}' \
 		localhost:8087 admin.v1.AdminService/AllGreetings | jq
+
+call-local-allgreetingstreams:
+	cd api/proto && grpcurl \
+		-protoset <(buf build -o -) -plaintext \
+		-d '{"name": "Moe"}' \
+		localhost:8087 admin.v1.AdminService/AllGreetingStreams | jq

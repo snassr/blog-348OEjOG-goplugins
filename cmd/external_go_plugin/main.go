@@ -81,3 +81,25 @@ func (g *GreeterPlugin) Greet(
 	msg := fmt.Sprintf("你好, %s", name)
 	return connect.NewResponse(&pluginv1.GreetResponse{Message: &msg}), nil
 }
+
+func (g *GreeterPlugin) StreamGreet(
+	ctx context.Context,
+	req *connect.Request[pluginv1.StreamGreetRequest],
+	stream *connect.ServerStream[pluginv1.StreamGreetResponse],
+) error {
+	name := req.Msg.GetName()
+
+	for i := 1; i <= 5; i++ {
+		select {
+		case <-ctx.Done():
+			return ctx.Err()
+		default:
+			msg := fmt.Sprintf("你好 #%d to %s from external Go plugin", i, name)
+			if err := stream.Send(&pluginv1.StreamGreetResponse{Message: &msg}); err != nil {
+				return err
+			}
+		}
+	}
+
+	return nil
+}
