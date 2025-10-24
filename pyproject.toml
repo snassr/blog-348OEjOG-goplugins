@@ -13,6 +13,7 @@ dependencies = [
   "uvicorn",
 ]
 
-[tool.setuptools.packages.find]
-where = ["external/gen/plugin_proto_py", "external/gen/goplugins_api_proto_py"]
-include = ["*"]
+[tool.ruff]
+line-length = 88
+target-version = "py311"
+extend-exclude = [".venv/"]
