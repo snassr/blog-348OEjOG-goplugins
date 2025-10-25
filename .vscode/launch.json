@@ -14,6 +14,18 @@
       "request": "launch",
       "mode": "auto",
       "program": "cmd/external_go_plugin/main.go"
+    },
+    {
+      "name": "Debug external py plugin (venv)",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/cmd/external_py_plugin/main.py",
+      "python": "${workspaceFolder}/.venv/bin/python",
+      "console": "integratedTerminal",
+      "justMyCode": false,
+      "env": {
+        "UV_NO_SYNC": "1"
+      }
     }
   ],
 }
