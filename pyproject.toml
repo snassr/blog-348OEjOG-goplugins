@@ -1,0 +1,19 @@
+[project]
+name = "blog-348OEjOG-goplugins"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+  "connectrpc",
+  "connect-python",
+  "httpx",
+  "fastapi",
+  "pydantic",
+  "uvicorn",
+]
+
+[tool.ruff]
+line-length = 88
+target-version = "py311"
+extend-exclude = [".venv/"]

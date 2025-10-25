@@ -1,0 +1,26 @@
+edition = "2023";
+
+package plugin.v1;
+
+option go_package = "github.com/snassr/blog-348OEjOG-goplugins/external/gen/plugin-proto-go/plugin/v1;pluginv1";
+
+service PluginService {
+  rpc Greet(GreetRequest) returns (GreetResponse);
+  rpc StreamGreet(StreamGreetRequest) returns (stream StreamGreetResponse);
+}
+
+message GreetRequest {
+  string name = 1;
+}
+
+message GreetResponse {
+  string message = 1;
+}
+
+message StreamGreetRequest {
+  string name = 1;
+}
+
+message StreamGreetResponse {
+  string message = 1;
+}

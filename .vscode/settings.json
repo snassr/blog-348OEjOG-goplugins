@@ -1,0 +1,6 @@
+{
+  "gopls": {
+    "formatting.local": "github.com/snassr/blog-348OEjOG-goplugins"
+  },
+  "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python",
+}
