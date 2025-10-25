@@ -1,6 +1,7 @@
 package pluginruntime
 
 import (
+	"fmt"
 	"log"
 	"net/http"
 	"sync"
@@ -54,7 +55,7 @@ func (m *Manager) Add(id string, p plugin.Plugin) {
 }
 
 func (m *Manager) RegisterRemote(id, address string) error {
-	addr := "http://" + address
+	addr := fmt.Sprintf("http://%s", address)
 	client := pluginv1connect.NewPluginServiceClient(http.DefaultClient, addr)
 
 	m.Add(id, &PluginAdapter{client: client})

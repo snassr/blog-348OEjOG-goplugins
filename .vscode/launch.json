@@ -16,7 +16,7 @@
       "program": "cmd/external_go_plugin/main.go"
     },
     {
-      "name": "Debug external py plugin (venv)",
+      "name": "Debug external py plugin",
       "type": "debugpy",
       "request": "launch",
       "program": "${workspaceFolder}/cmd/external_py_plugin/main.py",

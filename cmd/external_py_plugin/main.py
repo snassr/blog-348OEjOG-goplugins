@@ -46,7 +46,6 @@ class GreeterPlugin(plugin_connect.PluginService):
 app = plugin_connect.PluginServiceASGIApplication(GreeterPlugin())
 
 
-# --- Register plugin with host ---
 async def register_plugin():
     client = admin_connect.AdminServiceClient(HOST_ADDR)
 
