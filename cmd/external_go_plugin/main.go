@@ -89,7 +89,7 @@ func (g *GreeterPlugin) StreamGreet(
 ) error {
 	name := req.Msg.GetName()
 
-	for i := 1; i <= 5; i++ {
+	for i := 1; i <= 3; i++ {
 		select {
 		case <-ctx.Done():
 			return ctx.Err()

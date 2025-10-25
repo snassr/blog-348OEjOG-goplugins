@@ -8,6 +8,9 @@ gen-proto-api:
 gen-proto-plugin:
 	cd api/proto && buf lint && buf generate
 
+run-local-server: gen-proto
+	go run cmd/server/main.go
+
 run-local-external_py_plugin: gen-proto
 	uv run python cmd/external_py_plugin/main.py
 
@@ -23,5 +26,5 @@ call-local-allgreetings:
 call-local-allgreetingstreams:
 	cd api/proto && grpcurl \
 		-protoset <(buf build -o -) -plaintext \
-		-d '{"name": "Moe"}' \
+		-d '{"name": "Joe"}' \
 		localhost:8087 admin.v1.AdminService/AllGreetingStreams | jq

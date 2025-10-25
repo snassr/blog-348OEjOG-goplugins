@@ -36,9 +36,10 @@ class GreeterPlugin(plugin_connect.PluginService):
         ctx,
     ):
         name = request.name
-        for i in range(5):
+        LTR = "\u200e"
+        for i in range(3):
             yield plugin_pb2.StreamGreetResponse(
-                message=f"مرحبا #{i + 1} to {name} from external Python plugin"
+                message=f"مرحبا {LTR}#{i + 1} to {name} from external Python plugin"
             )
 
 

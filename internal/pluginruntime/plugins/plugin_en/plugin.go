@@ -18,7 +18,7 @@ func (p *pn) Greet(ctx context.Context, name string) (string, error) {
 }
 
 func (p *pn) StreamGreet(ctx context.Context, name string, send func(msg string) error) error {
-	for i := 1; i <= 5; i++ {
+	for i := 1; i <= 3; i++ {
 		select {
 		case <-ctx.Done():
 			return ctx.Err()
